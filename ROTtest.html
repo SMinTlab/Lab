@@ -25,10 +25,10 @@ reproduced or used in any manner whatsoever.
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.2.0/ace.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.2.0/ext-language_tools.js"></script>
-        
+
         <script src="js/tips.js" type="text/javascript"></script>
-        
-        
+
+
     </head>
     <body>
 
@@ -53,10 +53,21 @@ reproduced or used in any manner whatsoever.
                     <ul id="editortabs" class="nav nav-tabs">
                         <li class="active"><a id="Player1" href="#editor1" data-toggle="tab">A</a></li>
                         <li class="disabled"><a id="Player2" href="#editor2" data-toggle="tab">OPP</a></li>
+                        <li class=""><a id="outLog" href="#outlog" data-toggle="tab">出力<span class="badge">0</span></a></li>
                     </ul>
                     <div class="tab-content">
                         <div class="tab-pane active" id="editor1"></div>
                         <div class="tab-pane" id="editor2"></div>
+                        <div class="tab-pane" id="outlog">
+                            <form class="form-horizontal">
+                                <div class="form-group">
+                                    <label class="col-sm-2 control-label" for="InputTextarea">出力結果</label>
+                                    <div class="col-sm-10">
+                                        <textarea placeholder="出力はありません。" rows="3" class="form-control" id="InputTextarea"></textarea>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
                     </div>
 
                     <br>
@@ -111,7 +122,7 @@ reproduced or used in any manner whatsoever.
         </div>
         <script>
             let expancond = false;
-            $(document).on(`click`,`#expanflag`,function (e) {
+            $(document).on(`click`, `#expanflag`, function (e) {
                 let txt = `<p id="expanflag">デバッグ用</p>`;
                 if (!expancond) {
                     txt = `
@@ -138,11 +149,12 @@ reproduced or used in any manner whatsoever.
         <script src="js/main.js"></script>
         <script src="./js/moveHuman.js"></script>
         <script src="./js/drawHuman.js"></script>
+        <script src="./js/logHuman.js"></script>
         <script src="./js/operationAdapter.js"></script> 
         <script src="./js/TurnController.js"></script>
         <script src="./js/Rules.js"></script>
         <script src="./js/toolbar.js"></script>
-        
+
         <script src="./js/ranking.js"></script>
         <div id="log"></div>
         <div id="emScale"></div>

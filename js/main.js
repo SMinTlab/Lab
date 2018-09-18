@@ -119,6 +119,9 @@ let actor1 = {
     buf:[],
     draw_x: 2,
     draw_y: 2,
+    logHuman: function(args){
+        return logHuman(actor1.name, args);
+    },
     moveHuman: function(args){
         return moveHuman(actor1.name, args).then(function(){
             actor1.draw_x = actor1.x;
@@ -201,6 +204,9 @@ let actor2 = {
     buf:[],
     draw_x: w-1,
     draw_y: h-1,
+    logHuman: function(args){
+        return logHuman(actor2.name, args);
+    },
     moveHuman: function(args){
         return moveHuman(actor2.name, args).then(function(){
             actor2.draw_x = actor2.x;actor2.draw_y = actor2.y;

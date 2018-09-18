@@ -12,9 +12,16 @@
  * ======================================================================
  */
 
+let myPC = true;
 let debug = false;
 let port = false;
-if (debug) {
+if (myPC){
+    rankphpurl = `http://localhost:8383/Lab/php/rank.php`;
+  logphpurl = `http://localhost:8383/Lab/php/log.php`;
+  chalogphpurl = `http://localhost:8383/Lab/php/chalog.php`;
+  finalizeurl = `http://localhost:8383/Lab/php/finalize.php`;
+} else{
+    if (debug) {
   rankphpurl = `http://localhost${port ? ":8080" : ""}/mitani/php/rank.php`;
   logphpurl = `http://localhost${port ? ":8080" : ""}/mitani/php/log.php`;
   chalogphpurl = `http://localhost${port ? ":8080" : ""}/mitani/php/chalog.php`;
@@ -25,6 +32,8 @@ if (debug) {
   chalogphpurl = `php/chalog.php`;
   finalizeurl = `php/finalize.php`;
 }
+}
+
 
 function ranking(name, score, p) {
   let $defer = new $.Deferred();

@@ -247,6 +247,10 @@ class Player {
 	public static String[][] getArea() {
 		return Area;
 	}
+
+        public void log(String log){
+                print(this.name + ".log"+surfix+"(" + log + ")");
+        }
 }
 
 class A extends Player {
