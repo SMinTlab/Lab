@@ -1,0 +1,84 @@
+move("");
+//south
+if(detect("south",OBJECT.WALL)){
+    if(detect("north",OBJECT.WALL)){
+        if(detect("east",OBJECT.WALL)){
+            draw();
+            move("west");
+        }
+        else{
+            draw();
+            move("east");
+        }
+    }
+    else if(detect("east",OBJECT.WALL)){
+        if(detect("west",OBJECT.WALL)){
+            draw();
+            move("north");
+        }
+        else{
+            draw();
+            move("west");
+        }
+    }
+    else if(detect("west",OBJECT.WALL)){
+        if(detect("east",OBJECT.WALL)){
+            draw();
+            move("north");
+        }
+        else{
+            draw();
+            move("east");
+        }
+    }
+    else{
+        draw();
+        move("north");
+    }
+}
+
+else{
+    draw();
+    move("south");
+}
+
+if(detect("south",OBJECT.WALL)){
+    if(detect("west",OBJECT.WALL)){
+        if(detect("east",OBJECT.WALL)){
+            draw();
+            move("north");
+        }
+        else{
+            draw();
+            move("east");
+        }
+    }
+    else if(detect("east",OBJECT.WALL)){
+        if(detect("west",OBJECT.WALL)){
+            draw();
+            move("north");
+        }
+        else{
+            draw();
+            move("west");
+        }
+    }
+    else if(detect("west",OBJECT.WALL)){
+        if(detect("east",OBJECT.WALL)){
+            draw();
+            move("north");
+        }
+        else{
+            draw();
+            move("east");
+        }
+    }
+    else{
+        draw();
+        move("north");
+    }
+}
+else{
+        draw();
+        move("south");
+    }

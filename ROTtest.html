@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<!--
+======================================================================
+Project Name    : HTML5Application
+File Name       : ROTtest.html
+Encoding        : UTF-8
+Creation Date   : 2017/07/06
+
+Copyright © 2017 Mitani. All rights reserved.
+
+This source code or any portion thereof must not be
+reproduced or used in any manner whatsoever.
+======================================================================
+-->
+<html>
+    <head>
+        <title>プログラミング上達支援プログラム</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="shortcut icon" href="favicon.ico"/>
+        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet">
+        <link href="css/rottest.css" rel="stylesheet">
+        <link href="css/tips.css" rel="stylesheet">
+        <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.2.0/ace.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.2.0/ext-language_tools.js"></script>
+        
+        <script src="js/tips.js" type="text/javascript"></script>
+        
+        
+    </head>
+    <body>
+
+        <div id="modal-main">
+            <div class="progress">
+                <div id="php-progress" class="progress-bar progress-bar-striped active" role="progressbar" style="width: 0%;">
+                    0%
+                </div>
+            </div>
+            処理中です.ブラウザのリロードはしないで下さい.
+
+        </div>
+
+        <div id="mainpan">
+            <div id="mappan" class="panel panel-default">
+                <div class="panel-heading">マップ(枠内の中央付近をクリックするとマップを描画します.)</div>
+                <div id="map" class="panel-body"></div>
+            </div>
+            <div id="editorpan" class="panel panel-default">
+                <div class="panel-heading">エディター</div>
+                <div id="editor" class="panel-body">
+                    <ul id="editortabs" class="nav nav-tabs">
+                        <li class="active"><a id="Player1" href="#editor1" data-toggle="tab">A</a></li>
+                        <li class="disabled"><a id="Player2" href="#editor2" data-toggle="tab">OPP</a></li>
+                    </ul>
+                    <div class="tab-content">
+                        <div class="tab-pane active" id="editor1"></div>
+                        <div class="tab-pane" id="editor2"></div>
+                    </div>
+
+                    <br>
+                    <div id="infopan" class="panel panel-default">
+                        <div class="panel-heading">情報</div>
+                        <div id="infotab" class="panel-body">
+                            <div id="scores"></div>
+                        </div>
+                        <input type="range" name="speedrange" id="speedrange" value="30" min="0" max="100" step="1"/><label for="speedrange">行動の早さ(速↔遅)</label>
+                        <br>
+                        <input type="text" name="turn" id="turn" value="0" readonly=""/><label for="turn">ターン</label>
+                        <br>
+                        <input type="text" value="" id="codesize" readonly="readonly"/>コードサイズ
+                    </div>
+
+
+                </div>
+                <div id="toolbar" class="btn-group">
+                    <button id="tutorial" class="btn btn-default btn-lg help_tips" data-help="チュートリアルページを開きます."><i class="glyphicon glyphicon-info-sign"></i></button>
+                    <button id="name_in" class="btn btn-default btn-lg help_tips" data-help="あなたのプレイヤー名を変更します."><i class="glyphicon glyphicon-user"></i></button>
+                    <button id="save" class="btn btn-default btn-lg help_tips" data-help="コードを保存します."><i class="glyphicon glyphicon-floppy-save"></i></button>
+                    <button id="load" class="btn btn-default btn-lg help_tips" data-help="保存したコードを読み込みます."><i class="glyphicon glyphicon-folder-open"></i></button>
+                    <button id="execute" class="btn btn-default btn-lg help_tips" data-help="コードを実行します."><i class="glyphicon glyphicon-play"></i></button>
+                    <button id="pause" class="btn btn-default btn-lg help_tips" data-toggle="button" data-help="実行を一時停止します."><i class="glyphicon glyphicon-stop"></i></button>
+                    <button id="repeat" class="btn btn-default btn-lg help_tips" data-help="実行済の行動を再現します."><i class="glyphicon glyphicon-repeat"></i></button>
+                    <button id="export" class="btn btn-default btn-lg help_tips" data-help="コードをPCに保存します."><i class="glyphicon glyphicon-download"></i></button>
+                    <button id="challenge" class="btn btn-default btn-lg dropdown-toggle  help_tips" data-toggle="dropdown" data-help="相手コードをランキングのものにします." aria-expanded="false"><i class="glyphicon glyphicon-exclamation-sign"></i>
+                        <span class="caret"></span>
+                    </button>
+
+                    <ul class="dropdown-menu" role="menu">
+                        <li role="presentation"><a class="chall" role="menuitem" tabindex="-1" data-rank=0 href="#">1位</a></li>
+                        <li role="presentation"><a class="chall" role="menuitem" tabindex="-1" data-rank=1 href="#">2位</a></li>
+                        <li role="presentation"><a class="chall" role="menuitem" tabindex="-1" data-rank=2 href="#">3位</a></li>
+                        <li role="presentation"><a class="chall" role="menuitem" tabindex="-1" data-rank=3 href="#">4位</a></li>
+                        <li role="presentation"><a class="chall" role="menuitem" tabindex="-1" data-rank=4 href="#">5位</a></li>
+                    </ul>
+                </div>
+
+            </div>
+
+        </div>
+        <br>
+        <div id="rankpan" class="panel panel-default">
+            <div class="panel-heading">ランキングと個人ログ</div>
+            <div id="ranktab" class="panel-body">
+                <iframe id="rankwin" src="ranking.html"></iframe>
+            </div>
+        </div>
+        <div id="expan"><p id="expanflag">デバッグ用</p>
+
+        </div>
+        <script>
+            let expancond = false;
+            $(document).on(`click`,`#expanflag`,function (e) {
+                let txt = `<p id="expanflag">デバッグ用</p>`;
+                if (!expancond) {
+                    txt = `
+                            <p id="expanflag">デバッグ用</p>
+                            <div>
+                            <button type="button" name="array" id="array" hidden="">arrayテスト</button>
+                            <button type="button" name="lighting" id="lighting" hidden="">視界</button>
+                            <button type="button" name="envout" id="envout">env出力</button>
+                            <button type="button" name="logtest" id="logtest">ログテスト</button>
+                            <button type="button" name="finalizeUserdata" id="finalizeUserdata">ユーザーデータ退避</button>
+                            <input type="button" name="ranking" id="ranking" value="ランキング追加"/>
+                            <input type="text" name="speed" id="speed" value="10"/><label for="speed">スピード</label>
+                            <br>
+                            <button type="button" name="gameover" id="gameover" hidden="">ゲームオーバー処理</button>
+                            <input type="checkbox" name="opcodepeep" id="opcodepeep" value="1"/><label for="opcodepeep">相手コード閲覧</label>
+                            </div>`;
+                }
+                expancond = !expancond;
+                $(this).parent().html(txt);
+            });
+        </script>
+        <script src="js/rot.js"></script>
+        <script src="./js/rottest.js"></script>
+        <script src="js/main.js"></script>
+        <script src="./js/moveHuman.js"></script>
+        <script src="./js/drawHuman.js"></script>
+        <script src="./js/operationAdapter.js"></script> 
+        <script src="./js/TurnController.js"></script>
+        <script src="./js/Rules.js"></script>
+        <script src="./js/toolbar.js"></script>
+        
+        <script src="./js/ranking.js"></script>
+        <div id="log"></div>
+        <div id="emScale"></div>
+    </body>
+</html>

@@ -1,0 +1,55 @@
+if(detect(LEFT(),OBJECT.WALL)){
+    if(detect(RIGHT(),OBJECT.WALL)){
+        if(detect(FORWARD(),OBJECT.WALL)){
+            move(BACKWARD());
+          }         
+        else{
+             move(FORWARD());
+            }       
+      }
+    else{
+        if(detect(FORWARD(),OBJECT.WALL)){
+            move(RIGHT());
+          }
+        else{
+            move(RIGHT()); 
+            }
+        }
+
+  }
+else{ 
+    if(detect(RIGHT(),OBJECT.NOTHING)){
+        if(detect(FORWARD(),OBJECT.NOTHING)){
+            move(LEFT());
+        }
+    move(RIGHT());    
+    }
+    else{
+        if(detect(FORWARD(),OBJECT.NOTHING)){
+            move(FORWARD());
+          }
+        else{
+         move(LEFT());
+            }
+         }
+}; 
+
+if(detect(LEFT(),OBJECT.WALL)){
+    if(detect(RIGHT(),OBJECT.NOTHING)){
+        move(RIGHT());
+      }
+    else{
+         move(FORWARD());
+         }
+};
+
+move(FORWARD());
+
+if(detect(FORWARD(),OBJECT.WALL)){
+           draw();
+};
+    
+    
+    
+
+

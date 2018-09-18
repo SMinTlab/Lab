@@ -1,0 +1,10 @@
+move("south");
+move("east");
+for(int i = 0; i < 11;i  ){
+    
+}
+move("north");
+move("west");
+for(int i = 0; i < 11;i  ){
+    
+}

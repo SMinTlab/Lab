@@ -1,0 +1,19 @@
+    DetW = detect("west",OBJECT.WALL);
+    if (DetW == "true") {
+        move("west");
+        draw("west");
+    }
+    
+    DetS = detect("south",OBJECT.NOTHING);
+    if (DetS == "true") {
+        move("south");
+    }
+    else {
+        DetE = detect("east",OBJECT.NOTHING);
+        if (DetE == "true") {
+            move("east");
+        }
+        else {
+            move("north");
+        }
+    }

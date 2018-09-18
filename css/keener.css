@@ -1,0 +1,22 @@
+/*
+======================================================================
+Project Name    : StickParson
+File Name       : keener.css
+Encoding        : UTF-8
+Creation Date   : 2018/07/18
+
+Copyright © 2018 Mitani. All rights reserved.
+
+This source code or any portion thereof must not be
+reproduced or used in any manner whatsoever.
+======================================================================
+*/
+/* 
+    Created on : 2018/07/18, 22:21:54
+    Author     : mitani
+*/
+
+#matches .ht_master tr:nth-child(1) > td:nth-child(4) {
+  background-color: #f0f0f0;
+  color: #000;
+}

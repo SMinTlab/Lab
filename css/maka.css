@@ -1,0 +1,34 @@
+/*
+======================================================================
+Project Name    : StickParson
+File Name       : maka.css
+Encoding        : UTF-8
+Creation Date   : 2018/02/27
+
+Copyright © 2018 Mitani. All rights reserved.
+
+This source code or any portion thereof must not be
+reproduced or used in any manner whatsoever.
+======================================================================
+*/
+/* 
+    Created on : 2018/02/27, 10:19:56
+    Author     : mitani
+*/
+body{
+    height: auto;
+}
+#maka-tables{
+    width: 55vw;
+    height: 90vh;
+}
+.jewelry{
+    
+}
+.no{
+    width: 30px;
+}
+#maka-tool{
+    width: 45vw;
+    float: right;
+}

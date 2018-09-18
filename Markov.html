@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<!--
+======================================================================
+Project Name    : StickParson
+File Name       : Keener.html
+Encoding        : UTF-8
+Creation Date   : 2018/07/15
+
+Copyright © 2018 Mitani. All rights reserved.
+
+This source code or any portion thereof must not be
+reproduced or used in any manner whatsoever.
+======================================================================
+-->
+<html>
+    <head>
+        <title>Markovのレーティングアルゴリズム</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/handsontable/dist/handsontable.full.min.js"></script>
+        <link rel="stylesheet" media="screen" href="https://cdn.jsdelivr.net/npm/handsontable/dist/handsontable.full.min.css">
+
+        <script src="js/markov.js"></script>
+    </head>
+    <body>
+        <div id="names" class="handsontable"></div>
+        <input id="inputName" type="text"/>
+        <button id="addName">Name追加</button>
+        <div id="matches" class="handsontable"></div>
+        <button id="addMatch">Match追加</button>
+        <form>
+            <input id="inputFile" type="file" name="file"/>
+            <button id="load">データ読み込み</button>
+        </form>
+        <div id="example1" class="handsontable"></div>
+        <form id="ReCalcurate">
+            <select name="variation">
+                <option value="LooserVotes">敗者投票方式</option>
+                <option value="LooserScoreVotes">敗者得点差投票方式</option>
+                <option value="AllVote">失点投票方式</option>
+            </select>
+            <input type="checkbox" name="noLoose">無敗者は自己投票する
+            <button id="reCal">再計算</button>
+        </form>
+        <div id="wr" class="handsontable"></div>
+        <div id="rate" class="handsontable"></div>
+        <div id="rank" class="handsontable"></div>
+        <a id="inputExample" href="DLContents/inputExample.txt" download>入力ファイル例</a>
+    </body>
+</html>

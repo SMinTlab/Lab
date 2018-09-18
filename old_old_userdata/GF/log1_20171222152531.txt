@@ -1,0 +1,29 @@
+
+    int loopflag;
+    loopflag = 1;
+    
+    while (loopflag > 0) {
+        while(detect(RIGHT(),OBJECT.WALL) && detect(FORWARD(),OBJECT.NOTHING)) {
+            move(FORWARD());
+        }
+        if (detect(RIGHT(),OBJECT.NOTHING)) {
+            move(RIGHT());
+        }
+        else if (detect(FORWARD(),OBJECT.NOTHING)) {
+            move(FORWARD());
+        }
+        else {
+             int[] front = get_Position();
+             if (get_Direction( ) == DIR.SOUTH) {
+                 front[1] = front[1] + 1;
+             }
+             if (MapElem(front[1]) == 0) {
+                 move(LEFT());
+             }
+             else {
+                 draw();
+            move(LEFT());
+             }
+        }
+    }
+    

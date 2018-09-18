@@ -1,0 +1,98 @@
+/*
+======================================================================
+Project Name    : HTML5Application
+File Name       : layouttest.css
+Encoding        : UTF-8
+Creation Date   : 2017/05/11
+
+Copyright © 2017 auxak. All rights reserved.
+
+This source code or any portion thereof must not be
+reproduced or used in any manner whatsoever.
+======================================================================
+*/
+/* 
+    Created on : 2017/05/11, 11:21:24
+    Author     : mitani
+*/
+html, body{
+    height: 100%;
+}
+#stage, #result, #submit{
+    border: solid 1px red;
+    box-sizing: border-box;
+    text-align: center;
+    font-weight: normal;
+    font-size: 6px;
+    float: left;
+    position: relative;
+}
+#submit{
+    width: 50%;
+    height: 10%;
+}
+#submit_button{
+    width: 100%;
+    height: 100%;
+    font-size: 5.0em;
+    border-style: none;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+    background-color: orange;
+    color: green;
+    font-family:serif;
+    
+}
+.main{
+    float: left;
+    border: none;
+    clear: both;
+    position: relative;
+    width: 90%;
+    height: 80%;
+}
+#editor{
+    width: 50%;
+    height: 90%;
+    font-size: 0.1em;
+}
+#stage{
+    overflow: scroll;
+    width: 50%;
+    height: 100%;
+    /*background-image: url("../asset/renga.png");*/
+}
+#result{
+    overflow: scroll;
+    clear: both;
+    border-color: yellow;
+    width: 90%;
+    height: 20%;
+}
+.wrapper{
+    position: relative;
+    width: 100%;
+    height: 90%;
+}
+.wrapper:before,.wrapper:after{
+    clear: both;
+    content: "";
+    display: block;
+}
+.floor{
+    background: url("../asset/floor.png");
+    z-index: -1;
+}
+.wall{
+    background: url("../asset/renga.png");
+    z-index: -1;
+}
+.start{
+    background: url("../asset/sfloor.png");
+    z-index: -1;
+}
+.goal{
+    background: url("../asset/gfloor.png");
+    z-index: -1;
+}

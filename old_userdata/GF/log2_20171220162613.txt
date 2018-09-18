@@ -1,0 +1,23 @@
+
+    int loopflag, Position;
+    loopflag = 1;
+    
+    while (loopflag > 0) {
+        while(detect(RIGHT(),OBJECT.WALL) && detect(FORWARD(),OBJECT.NOTHING)) {
+            move(FORWARD());
+        }
+        if (detect(RIGHT(),OBJECT.NOTHING)) {
+            move(RIGHT());
+        }
+        else if (detect(FORWARD(),OBJECT.NOTHING)) {
+            move(FORWARD());
+        }
+        else {
+            Position = get_Position();
+            if (!(Position == [2,2])) {
+                draw();
+            }
+            move(LEFT());
+        }
+    }
+    

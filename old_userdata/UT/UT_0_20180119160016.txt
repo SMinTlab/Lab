@@ -1,0 +1,12 @@
+move("south");
+move("east");
+if(detect("east", OBJECT.WALL)){
+    draw();
+}
+else{
+    move("east");
+}
+if(detect("west", OBJECT.NOTHING)){
+    
+move("north");
+}

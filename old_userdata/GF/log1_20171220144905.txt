@@ -1,0 +1,32 @@
+    
+    move("west");
+    draw();
+    move("south");
+    
+    int loopflag, turnflag;
+    loopflag = 1;
+    turnflag = 0;
+    
+    while (loopflag > 0) {
+        while (detect(FORWARD(),OBJECT.NOTHING)) {
+            move(FORWARD());
+            if (turnflag > 0) {
+                break
+            }
+        }
+        
+        draw();
+        if (detect(RIGHT(),OBJECT.NOTHING)) {
+            move(RIGHT());
+            turnflag = 0;
+        }
+        else if (detect(LEFT(),OBJECT.NOTHING)) {
+            move(LEFT());
+            turnflag = 0;
+        }
+        else {
+            move(BACKWARD());
+        }
+        turnflag++;
+    }
+    

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<!--
+======================================================================
+Project Name    : HTML5Application
+File Name       : layouttest.html
+Encoding        : UTF-8
+Creation Date   : 2017/05/11
+
+Copyright © 2017 Mitani. All rights reserved.
+
+This source code or any portion thereof must not be
+reproduced or used in any manner whatsoever.
+======================================================================
+-->
+<html>
+    <head>
+        <title>棒人間プログラム</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="shortcut icon" href="favicon.ico"/>
+        <link rel="stylesheet" href="css/StickParson.css">
+        <link href="css/human_anim.css" rel="stylesheet" type="text/css" />
+        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet">
+    </head>
+    <body>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.2.0/ace.js"></script>
+        <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.2.0/ace.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.2.0/ext-language_tools.js"></script>
+
+        <div class="wrapper">
+            <div class="main">          
+                <div id="stage">                    
+                    <output id="list"></output>
+                    <script src="./js/dropzone.js"></script>
+                    <script src="./js/txtParse.js"></script>
+                    <script src="./js/ResultEmitter.js"></script>
+                    <script src="./js/EventChecker.js"></script>
+                    <div id="humantab"></div>
+                </div>
+                <div id="editor"></div>
+                <div id="submit"><button id="submit_button" type="submit" value="submit" name="submit" />submit</div>
+            </div>
+            <div class="btn-group">
+                <button class="btn btn-default dropdown-toggle" data-toggle="dropdown"><i class="glyphicon glyphicon-search"></i> <span class="caret"></span></button>
+                <ul class="dropdown-menu" id="font-size">
+                    <li><a href="#" data-size="-4">さらに縮小</a></li>
+                    <li><a href="#" data-size="-2">少し縮小</a></li>
+                    <li><a href="#" data-size="2">少し拡大</a></li>
+                    <li><a href="#" data-size="4">さらに拡大</a></li>
+                </ul>
+            </div>
+            <div id="result"></div>
+        </div>
+        <script src="./js/moveHuman.js"></script>
+        <script src="./js/createHuman2.js"></script>
+        <script src="./js/operationAdapter.js"></script> 
+        <script src="./js/editor.js"></script>
+        <div><a href="./DLContents/test1.txt">テストテキスト</a>のようなマップを左上の枠内にD&Dすると読み込み、壁に囲われた任意のマップ上を人間は自在に動くことができます。</div>
+    </body>
+</html>

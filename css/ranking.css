@@ -1,0 +1,30 @@
+/*
+======================================================================
+Project Name    : HTML5Application
+File Name       : ranking.css
+Encoding        : UTF-8
+Creation Date   : 2017/11/07
+
+Copyright © 2017 Mitani. All rights reserved.
+
+This source code or any portion thereof must not be
+reproduced or used in any manner whatsoever.
+======================================================================
+*/
+/* 
+    Created on : 2017/11/07, 9:41:31
+    Author     : mitani
+*/
+
+#rank{
+    width: 300px;
+    float: left;
+}
+#log{
+    width: 300px;
+    float: left;
+}
+#chalog{
+    width: 300px;
+    float: right;
+}

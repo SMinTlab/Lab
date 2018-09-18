@@ -1,0 +1,30 @@
+if(detect(LEFT(),OBJECT.WALL)){
+    if(detect(RIGHT(),OBJECT.WALL)){
+        if(detect(FORWARD(),OBJECT.WALL)){
+            move(BACKWARD());
+          }         
+        else{
+             move(FORWARD());
+            }       
+      }
+    else{
+        if(detect(FORWARD(),OBJECT.WALL)){
+            move(RIGHT());
+          }      
+        }
+    move(FORWARD());
+  };
+mo
+ 
+
+
+if(detect(FORWARD(),OBJECT.WALL)){
+           draw();
+}
+else{
+     move(LEFT());
+    };
+    
+    
+
+

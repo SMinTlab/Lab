@@ -1,0 +1,35 @@
+/*
+======================================================================
+Project Name    : StickParson
+File Name       : tutorial.css
+Encoding        : UTF-8
+Creation Date   : 2017/12/01
+
+Copyright © 2017 Mitani. All rights reserved.
+
+This source code or any portion thereof must not be
+reproduced or used in any manner whatsoever.
+======================================================================
+*/
+/* 
+    Created on : 2017/12/01, 12:41:36
+    Author     : mitani
+*/
+body{
+    width: 1300px;
+    height: 1400px;
+}
+#apis{
+    float: left;
+}
+#map{
+    position: fixed;
+    width: 100px;
+    height: 100px;
+    left: 60%;
+    top: 50%;
+    z-index: -1;
+}
+p{
+    display: inline;
+}

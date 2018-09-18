@@ -1,0 +1,27 @@
+    
+    move("west");
+    draw();
+    
+    int loopflag;
+    loopflag = 1;
+    
+    while (loopflag > 0) {
+        if ( detect("south",OBJECT.NOTHING) ) {
+            move("south");
+        }
+        else {
+            if ( detect("west",OBJECT.WALL) ) {
+                move("west");
+                draw();
+            }
+            while( detect("east",OBJECT.WALL) ) {
+                if ( detect("east",OBJECT.NOTHING) ) {
+                    move("east");
+                }
+                else {
+                    move("north");
+                }
+            }
+        }
+    }
+    

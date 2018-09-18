@@ -1,0 +1,132 @@
+/*
+======================================================================
+Project Name    : HTML5Application
+File Name       : rottest.css
+Encoding        : UTF-8
+Creation Date   : 2017/07/06
+
+Copyright © 2017 auxak. All rights reserved.
+
+This source code or any portion thereof must not be
+reproduced or used in any manner whatsoever.
+======================================================================
+*/
+/* 
+    Created on : 2017/07/06, 15:12:57
+    Author     : mitani
+*/
+body{
+    width: 1000px;
+    height: 1200px;
+}
+
+#mainpan{
+    width: 1200px;
+    height: 700px;
+}
+
+#mappan{
+    float: left;
+    width: 650px;
+    height: 700px;
+    margin:0;
+    padding: 0;
+}
+#editorpan{
+    float: right;
+    width: 540px;
+    height: auto;
+}
+#editortabs{
+    width: 450px;
+}
+#toolbar{
+    width: 50px;
+    background-color: gray;
+    float: right;
+}
+#infopan{
+    width: 520px;
+    height: auto;
+}
+#editor{
+    width: 450px;
+    float: left;
+}
+
+#editor1{
+    width: 450px;
+    height: 300px
+}
+#editor2{
+    width: 450px;
+    height: 300px
+}
+#rankpan{
+    width: 1100px;
+}
+#expan{
+    float: right;
+}
+
+#map{
+    width: 1000px;
+    height: 1000px;
+}
+#rankwin{
+    border: 0;
+    width: 1000px;
+    height: 250px;
+    margin:0;
+    padding: 0;
+    overflow: hidden;
+    border: 0px #FFF hidden;
+}
+
+#contents {
+  z-index: 0;
+  font-size: 16px;
+}
+.page-txt {
+  margin: 30px 0 0;
+  height: 2000px;
+}
+#modal-open {
+  color: #cc0000;
+}
+
+#modal-main {
+    display: none;
+    width: 500px;
+    height: 300px;
+    margin: 0;
+    padding: 0;
+    background-color: #ffffff;
+    color: #666666;
+    position:fixed;
+    z-index: 6;
+}
+
+#modal-bg {
+    display:none;
+    width:100%;
+    height:100%;
+    background-color: rgba(0,0,0,0.5);
+    position:fixed;
+    top:0;
+    left:0;
+    z-index: 5;
+}
+
+input[name="speedrange"]{
+    width: 200px;
+}
+
+#emScale {
+    margin: 0;
+    padding: 0;
+    width: 1em;
+    height: 1px;
+    visibility: hidden;
+}
+

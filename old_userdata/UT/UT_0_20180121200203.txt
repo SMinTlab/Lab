@@ -1,0 +1,19 @@
+
+while(detect(
+             FORWARD(),OBJECT.NOTHING)){
+    if(detect(LEFT(),OBJECT.NOTHING)){
+        move(LEFT());
+    }
+    else{
+         move(RIGHT());
+    }
+             move(FORWARD()); 
+}
+
+if(detect(
+          FORWARD(),OBJECT.WALL)){
+           draw();
+}
+else{
+     move(LEFT());
+    };

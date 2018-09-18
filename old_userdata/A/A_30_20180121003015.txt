@@ -1,0 +1,22 @@
+DIR fw=FORWARD();
+DIR ri=RIGHT();
+DIR le=LEFT();
+DIR bw=BACKWARD();
+
+boolean migi = detect(ri,OBJECT.WALL);
+boolean  mae = detect(fw,OBJECT.WALL);
+boolean  hidari = detect(le,OBJECT.WALL);
+boolean  usiro = detect(bw,OBJECT.WALL);
+
+if (migi){
+ //   move(ri);
+  //  draw( );
+    if (!mae){
+        move(fw);
+    }else{
+        draw( );
+        move(le);
+    }
+}else{
+    move(ri);
+}

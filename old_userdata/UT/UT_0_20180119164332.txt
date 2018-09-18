@@ -1,0 +1,14 @@
+while(detect(FORWARD(), OBJECT.WALL)){
+        move(BACKWARD());
+}
+if(detect(FORWARD(), OBJECT.WALL)){
+   draw();
+}
+else{
+    move(BACKWARD());
+}
+if(detect(FORWARD(), OBJECT.NOTHING)){
+    while(detect(RIGHT(), OBJECT.WALL)){
+        move(LEFT());
+    }
+}

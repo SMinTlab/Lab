@@ -1,0 +1,41 @@
+/*
+======================================================================
+Project Name    : HTML5Application
+File Name       : human_anim.css
+Encoding        : UTF-8
+Creation Date   : 2017/04/07
+
+Copyright © 2017 Mitani. All rights reserved.
+
+This source code or any portion thereof must not be
+reproduced or used in any manner whatsoever.
+======================================================================
+*/
+/* 
+    Created on : 2017/04/07, 10:33:11
+    Author     : mitani
+*/
+.human_foward{
+    width: 20px;
+    height: 28px;
+    background: url(../asset/foward.png) no-repeat 0 0;
+}
+.human_back{
+    width: 20px;
+    height: 28px;
+    background: url(../asset/back.png) no-repeat 0 0;
+}
+.human_right{
+    width: 20px;
+    height: 28px;
+    background: url(../asset/right.png) no-repeat 0 0;
+}
+.human_left{
+    width: 20px;
+    height: 28px;
+    background: url(../asset/left.png) no-repeat 0 0;
+}
+.is-position-0 { background-position: 0 0;}
+.is-position-1 { background-position: -20px 0;}
+.is-position-2 { background-position: -40px 0;}
+.is-position-3 { background-position: -60px 0;}

@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<!--
+======================================================================
+Project Name    : HTML5Application
+File Name       : index.html
+Encoding        : UTF-8
+Creation Date   : 2017/04/07
+
+Copyright © 2017 Mitani. All rights reserved.
+
+This source code or any portion thereof must not be
+reproduced or used in any manner whatsoever.
+======================================================================
+-->
+<html>
+    <head>
+        <title>三谷のページ</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="shortcut icon" href="favicon.ico"/>
+    </head>
+    <body>
+        <div>
+            <h3>Hello!</h3>
+            三谷が作ったものを並べておくページです。
+        </div>
+        <div>
+            <h3>Contents</h3>
+            <ul>
+                <li><a href="webcompiler.html" target="_blank">Webコンパイラーwith棒人間</a></li>
+                <li><a href="DLContents/irregular_N_in_a_row.zip" download>変則N目並べ</a></li>
+                <li><a href="StickParson.html">棒人間プログラム</a></li>
+                <li><a href="ROTtest.html">プログラミング上達支援システム</a></li>
+                <li><a href="Elo.html">イロレーティングシミュレータ</a></li>
+                <li><a href="DLContents/RSVP.zip" download>RSVPプログラム</a></li>
+                <li><a href="Keener.html">Keenerのレーティング</a></li>
+                <li><a href="Markov.html">Markovのレーティング</a></li>
+            </ul>
+        </div>
+        <div>
+            <h3>Update List</h3>
+            <ul>
+                <li>2018/07/24
+                    <ul>
+                        <li>Markovの手法におけるレーティング算出プログラムを追加</li>
+                    </ul>
+                </li>
+                <li>2018/07/20
+                    <ul>
+                        <li>Keenerの手法におけるレーティング算出プログラムにおいて, ファイルからの値の更新処理の一部を修正</li>
+                    </ul>
+                </li>
+                <li>2018/07/19
+                    <ul>
+                        <li>Keenerの手法におけるレーティング算出プログラムを追加</li>
+                    </ul>
+                </li>
+                <li>2018/04/27
+                    <ul>
+                        <li>RSVPプログラムを追加</li>
+                    </ul>
+                </li>
+                <li>2018/04/20
+                    <ul>
+                        <li>イロレーティングシミュレータを追加</li>
+                    </ul>
+                </li>
+                <li>2018/01/16
+                    <ul>
+                        <li>リプレイ機能にて,得点化されたマスの描画がなされていなかった不具合を修正.</li>
+                        <li>行動スタックの仕組みを大幅に変更し,動作準備時の処理を軽量化.</li>
+                        <li>チュートリアルページに説明を追加.</li>
+                    </ul>
+                </li>
+                <li>2018/01/04
+                    <ul>
+                        <li>ユーザーデータの処理を変更.</li>
+                        <li>ランキングの相手と戦う機能を追加.</li>
+                        <li>ユーザー名の変更処理に不具合があった問題を修正.</li>
+                        <li>その他細かい不具合や処理を修正.</li>
+                    </ul>
+                </li>
+                <li>2017/12/22
+                    <ul>
+                        <li>マップを一部変更.</li>
+                        <li>ツールバーの機能を追加(インフォメーションページ,名前変更,一位にチャレンジなど)</li>
+                        <li>スコアが獲れたマスをそう分かるように変更</li>
+                        <li>ターン速度をレンジバーで変更可能にした</li>
+                    </ul>
+                </li>
+                <li>2017/12/15
+                    <ul>
+                        <li>ランク一位のコードを相手にするボタンを実装</li>
+                        <li>チュートリアルページの実装</li>
+                    </ul>
+                </li>
+                <li>2017/11/14
+                    <ul>
+                        <li>ランキングページの実装</li>
+                    </ul>
+                </li>
+                <li>2017/10/25
+                    <ul>
+                        <li>Javaコードを一部改変(enum追加,area追加,moveメソッドの処理を変更)</li>
+                        <li>ターン数を計算する機能の追加</li>
+                        <li>自作のスケジューリングメソッドからrot.jsのスケジューラー及びエンジンへの換装</li>
+                        <li>ポーズ機能(サーバに送った一回ぶんだけ処理)の追加</li>
+                    </ul>
+                </li>
+                <li>2017/10/13
+                    <ul>
+                        <li>Javaコードを一部改変</li>
+                        <li>drawメソッドの追加</li>
+                    </ul>
+                </li>
+                <li>2017/10/06
+                    <ul>
+                        <li>ROTテストページをプログラミング上達支援システムへと改名</li>
+                        <li>プログラミング上達支援システムにおいてUIを変更</li>
+                    </ul>>
+                </li>
+                <li>2017/09/01
+                    <ul>
+                        <li>ROTテストページにおいて,棒人間がJavaで動作する機能を追加</li>
+                        <li>ROTテストページにおいて,棒人間の視界を実装</li>
+                    </ul>
+                </li>
+                <li>2017/07/21
+                    <ul>
+                        <li>ROTテストページを追加</li>
+                        <li>ROTテストページ内にてマップの描画を行う機能の追加</li>
+                        <li>ROTテストページ内のテキストエリアにて十字キーを押すと棒人間が動く機能の追加</li>
+                    </ul>
+                </li>
+                <li>2017/06/22
+                    <ul>
+                        <li>マップを設定可能とした</li>
+                        <li>detectメソッドを追加</li>
+                    </ul>
+                </li>
+                <li>2017/05/18
+                    <ul>
+                        <li>レイアウトテストページを作成</li>
+                    </ul>
+                </li>
+                
+                <li>2017/04/12
+                    <ul>
+                        <li>変則N目並べソフトを公開</li>
+                        <li>Webコンパイラーの仕様を一部変更</li>
+                    </ul>
+                </li>
+                <li>2017/04/07
+                    <ul>
+                        <li>このページを作成</li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </body>
+</html>

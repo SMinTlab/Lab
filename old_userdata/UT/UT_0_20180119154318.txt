@@ -1,0 +1,3 @@
+move("south");
+move("east");
+move("north");

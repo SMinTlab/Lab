@@ -1,0 +1,27 @@
+int i = 0;
+while(detect(FORWARD(), OBJECT.NOTHING)){
+    if(i>5){
+        i=0;
+        break;
+    }
+    if(!detect(LEFT(),OBJECT.WALL)){
+        move(LEFT());
+    }
+   move(FORWARD());
+   i  ;
+}
+move(LEFT());
+
+if(detect(LEFT(),OBJECT.WALL)){
+     if(detect(FORWARD(),OBJECT.WALL)){
+    move(BACKWARD());
+   }       
+}
+else{
+    if(detect(FORWARD(),OBJECT.WALL)){
+       move(LEFT()); 
+    }
+}
+    
+
+    

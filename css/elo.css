@@ -1,0 +1,69 @@
+body{
+    width: 100%;
+    height: 100%;
+}
+
+table , td, th, div {
+  border: 1px solid #000;
+  border-collapse: collapse;
+  padding: 10px;
+}
+
+td, th {
+  height: 25px;
+}
+
+table , td, th, button, div{
+  margin: 2rem;
+}
+
+.inline {
+  display: inline-block;
+}
+
+input {
+  margin: .3rem;
+}
+#graph{
+    height: 10%;
+}
+#A input{
+    display: none;
+}
+#A label{
+    display: block;
+    float: left;
+    cursor: pointer;
+    width: 80px;
+    margin: 0;
+    padding: 10px;
+    background: #bdc3c7;
+    color: #869198;
+    font-size: 16px;
+    text-align: center;
+    line-height: 1;
+    transition: .2s;
+}
+#A label:first-of-type{
+    border-radius: 3px 0 0 3px;
+}
+#A label:last-of-type{
+    border-radius: 0 3px 3px 0;
+}
+#A input[type="radio"]:checked + label{
+    background-color: #a1b91d;
+    color: #fff;   
+}
+#B p:nth-child(2){
+    display: block;
+    float: left;
+    width: 80px;
+    margin: 0;
+    padding: 10px;
+    background: black;
+    color: #fff;
+    font-size: 16px;
+    text-align: center;
+    line-height: 1;
+
+}

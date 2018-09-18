@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<!--
+======================================================================
+Project Name    : StickParson
+File Name       : Iro.html
+Encoding        : UTF-8
+Creation Date   : 2018/04/17
+
+Copyright © 2018 Mitani. All rights reserved.
+
+This source code or any portion thereof must not be
+reproduced or used in any manner whatsoever.
+======================================================================
+-->
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>イロレーティング</title>
+        <link rel="stylesheet" type="text/css" href="css/elo.css">
+        <script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
+        <script type="text/javascript" src="js/d3.min.js"></script>
+        <script type="text/javascript" src="js/elo.js"></script>
+    </head>
+    <body>
+
+        <form>
+            <div class="inline">
+                <div class="inline" id="A" style="float: left;margin-top: 7%">
+                    <p style="text-align: center">A</p>
+                    <input type="radio" id="win" name="battle_result" value="1">
+                    <label for="win">勝ち</label>
+                    <input type="radio" id="loose" name="battle_result" value="0">
+                    <label for="loose">負け</label>
+                    <input type="radio" id="draw" name="battle_result" value="0.5">
+                    <label for="draw">引き分け</label>
+                </div>
+                <span style="font-size: 30px;float: left;margin-top: 15%">⇒</span>
+                <div class="inline" id="B" style="float: left;margin-top: 7%">
+                    <p style="text-align: center">B</p>
+                    <p>未選択</p>
+                </div>
+            </div>
+
+            <div class="inline">
+                <input type="button" value="計算する" onclick="calculation()"><br>
+                <input type="button" value="リセットする" onclick="reset()" hidden="">
+            </div>
+            
+            <div class="inline" id="graph">
+                <div class="inline" style="margin: 0 0 0 0;width: inherit;height: 200px;"><p>↑</p><p>ランク低</p><p>ランク高</p><p>↓</p></div>
+            </div>
+        </form>
+        
+        <table id="result">
+            <tbody>
+                <tr>
+                    <td>A</td>
+                    <td>B</td>
+                    <td>Aの合計勝ち数</td>
+                    <td>Bの合計勝ち数</td>
+                    <td>RA</td>
+                    <td>RB</td>
+                    <td>EA</td>
+                    <td>EB</td>
+                </tr>
+                <tr>
+                    <td>-</td>
+                    <td>-</td>
+                    <td>-</td>
+                    <td>-</td>
+                    <td>1500.00</td>
+                    <td>1500.00</td>
+                    <td>1.00</td>
+                    <td>1.00</td>
+                </tr>
+            </tbody>
+        </table>
+
+
+    </body>
+</html>
+

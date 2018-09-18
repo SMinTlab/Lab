@@ -1,0 +1,14 @@
+if(detect(FORWARD(), OBJECT.NOTHING)){
+   move(FORWARD());
+}
+else{
+    move(LEFT());
+}
+move("south");
+if(detect(LEFT(), OBJECT.WALL)){
+    move(RIGHT());
+}
+else{
+     move(FORWARD());
+}
+move("east");

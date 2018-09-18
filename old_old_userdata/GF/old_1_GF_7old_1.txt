@@ -1,0 +1,6 @@
+
+    int loopflag;
+    loopflag = 1;
+    
+    while (loopflag > 0) {
+        while(detect(RIGHT(),OBJECT.WALL) 

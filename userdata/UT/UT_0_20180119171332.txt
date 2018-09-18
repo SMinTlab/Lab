@@ -1,0 +1,17 @@
+while(detect(FORWARD(), OBJECT.NOTHING)){
+   move(FORWARD());
+}
+move(FORWARD());
+if(detect(LEFT(), OBJECT.WALL)){
+    move(RIGHT());
+}
+else{
+     move(FORWARD());
+}
+if(detect(FORWARD(),OBJECT.NOTHING)){
+    move(FORWARD());
+}
+else{
+    move(LEFT()); 
+    
+}

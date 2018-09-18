@@ -1,0 +1,19 @@
+    
+    move("west");
+    draw();
+    move("south");
+    
+    int loopflag;
+    loopflag = 1;
+    
+    while (loopflag > 0) {
+        while(detect(RIGHT(),OBJECT.WALL) && detect(FORWARD(),OBJECT.NOTHING)) {
+            move(FORWARD());
+        }
+        if (detect(RIGHT(),OBJECT.NOTHING)) {
+            move(RIGHT());
+        }
+        draw();
+        move(LEFT());
+    }
+    

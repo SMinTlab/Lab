@@ -1,0 +1,10 @@
+while(detect(LEFT(),OBJECT.WALL)){
+    if(!detect(LEFT(),OBJECT.WALL))
+{move(LEFT());}
+
+else{move(FORWARD());}
+}
+
+
+
+while(detect(FORWARD(),OBJECT.WALL)){move(BACKWARD());}

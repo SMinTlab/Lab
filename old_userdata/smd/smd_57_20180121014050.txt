@@ -1,0 +1,96 @@
+int i = 0;
+String rist[] = new String[900];
+String non="none";
+for(i = 0; i < 900; i  ){
+	rist[i]=non;
+}
+int hairetu[] = new int[2];
+int ret=0;
+for(int p = 0; p < 2; p  ){
+	int kusoadd=0;
+
+	for(int x = 2; x <= 19; x  ){
+		for(int y = 2; y <= 19; y  ){
+			int kabenum=0;
+			
+							for(i = 0; i < 900; i  ){
+								if(rist[i]==non){
+									break;
+								}else if(rist[i].equals(String.valueOf(x) "," String.valueOf(y-1))){
+									ret=1;	//kuso no toki
+								}
+							}
+							if(ret==0){		
+								hairetu[0] = x;
+								hairetu[1] = y-1;
+								String xykabe =MapElem(hairetu);
+								if(xykabe=="1"){
+									ret=1;	//kabe
+								}else{
+									ret=0;	//nannmonasi
+								}
+							}
+							kabenum  = ret;
+							ret=0;
+
+							for(i = 0; i < 900; i  ){
+								if(rist[i]==non){
+									break;
+								}else if(rist[i].equals(String.valueOf(x 1) "," String.valueOf(y))){
+									ret=1;	//kuso no toki
+								}
+							}
+							if(ret==0){		
+								hairetu[0] = x 1;
+								hairetu[1] = y;
+								String xykabe =MapElem(hairetu);
+								if(xykabe=="1"){
+									ret=1;	//kabe
+								}else{
+									ret=0;	//nannmonasi
+								}
+							}
+							kabenum  = ret;
+							ret=0;
+
+							for(i = 0; i < 900; i  ){
+								if(rist[i]==non){
+									break;
+								}else if(rist[i].equals(String.valueOf(x) "," String.valueOf(y 1))){
+									ret=1;	//kuso no toki
+								}
+							}
+							if(ret==0){		
+								hairetu[0] = x;
+								hairetu[1] = y 1;
+								String xykabe =MapElem(hairetu);
+								if(xykabe=="1"){
+									ret=1;	//kabe
+								}else{
+									ret=0;	//nannmonasi
+								}
+							}
+							kabenum  = ret;
+							ret=0;
+
+							for(i = 0; i < 900; i  ){
+								if(rist[i]==non){
+									break;
+								}else if(rist[i].equals(String.valueOf(x-1) "," String.valueOf(y))){
+									ret=1;	//kuso no toki
+								}
+							}
+							if(ret==0){		
+								hairetu[0] = x-1;
+								hairetu[1] = y;
+								String xykabe =MapElem(hairetu);
+								if(xykabe=="1"){
+									ret=1;	//kabe
+								}else{
+									ret=0;	//nannmonasi
+								}
+							}
+							kabenum  = ret;
+							ret=0;
+			if(kabenum>=3){		//3men ga kabe ka kuso
+				if(3<=x 

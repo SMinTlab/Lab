@@ -1,0 +1,32 @@
+/*
+======================================================================
+Project Name    : StickParson
+File Name       : tips.css
+Encoding        : UTF-8
+Creation Date   : 2017/11/21
+
+Copyright © 2017 Mitani. All rights reserved.
+
+This source code or any portion thereof must not be
+reproduced or used in any manner whatsoever.
+======================================================================
+*/
+/* 
+    Created on : 2017/11/21, 11:14:26
+    Author     : mitani
+*/
+#help_tips_pop{
+    width: auto;
+    height: auto;
+    display:inline-block;
+    position:absolute;
+    margin-top:15px;
+    margin-left:5px;
+    background:rgba(0,0,0,0.5);
+    color:#FFF;
+    margin-top:15px;
+    text-align:center;
+    border-radius:3px;
+    padding:5px;
+}
+

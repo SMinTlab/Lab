@@ -1,0 +1,12 @@
+if(!detect(LEFT(),OBJECT.WALL)){
+    move(LEFT());
+}
+while(!detect(FORWARD(),OBJECT.WALL)){
+    move(FORWARD());
+}
+if(!detect(RIGHT(),OBJECT.WALL)){
+    move(RIGHT());
+}
+while(!detect(FORWARD(),OBJECT.WALL)){
+    move(FORWARD());
+}

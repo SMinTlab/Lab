@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<!--
+======================================================================
+Project Name    : HTML5Application
+File Name       : ranking.html
+Encoding        : UTF-8
+Creation Date   : 2017/11/07
+
+Copyright © 2017 Mitani. All rights reserved.
+
+This source code or any portion thereof must not be
+reproduced or used in any manner whatsoever.
+======================================================================
+-->
+<html>
+    <head>
+        <title>ランキング</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet">
+        <link href="css/ranking.css" rel="stylesheet">
+        <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.2.0/ace.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.2.0/ext-language_tools.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.2.0/ace.js"></script>
+    </head>
+    <body>
+        <div id="rank" class="table-responsive">
+            <table class="table table-bordered" id ="ranktab">
+                <thead>
+                <th>No.</th>
+                <th>Name</th>
+                <th>Score</th>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+        </div>
+        <div id="log" class="table-responsive">
+            <table class="table table-bordered" id ="P1log">
+                <thead>
+                <th>No.</th>
+                <th>Score</th>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+        </div>
+        <div id="chalog">
+            
+        </div>
+        <div>
+            <input type="button" name="rankreload" id="rankreload" value="reload" hidden="hidden"/>
+        </div>
+        <script src="js/rot.js"></script>
+        <script src="js/rottest.js"></script>
+        <script src="js/ranking.js"></script>
+        
+    </body>
+</html>

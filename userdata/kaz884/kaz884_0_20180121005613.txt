@@ -1,0 +1,12 @@
+if(!detect(FORWARD(),OBJECT.WALL)){
+    if(detect(,OBJECT.WALL)){
+        if(detect("east",OBJECT.WALL)){
+            draw();
+            move(FORWARD());
+        }
+        else{
+            draw();
+            move(LEFT());
+        }
+    }
+    

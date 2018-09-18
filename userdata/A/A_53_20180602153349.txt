@@ -1,0 +1,33 @@
+if(detect(FORWARD(), OBJECT.WALL)) {
+    if(detect(RIGHT(), OBJECT.WALL)) {
+        draw();
+        if(detect(LEFT(), OBJECT.WALL)) {
+            move(BACKWARD());
+        } else {
+            move(LEFT());
+        }
+    }  else {
+        move(RIGHT());
+    }
+} else if(detect(RIGHT(), OBJECT.WALL)) {
+    int x = get_X();
+    int y = get_Y();
+    switch(get_Direction()) {
+    case WEST:
+        x--;
+        break;
+    case EAST:
+        x  ;
+        break;
+    case NORTH:
+        y--;
+        break;
+    case SOUTH:
+        y  ;
+        break;
+    }
+    boolean ok = true;
+    int pos[] = new int[2];
+    pos[0] = x-1;
+    pos[1] = y;
+    if(MapElem(pos) == "0" 

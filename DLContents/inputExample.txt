@@ -1,0 +1,7 @@
+NameEntry1 NameEntry2 NameEntry3 ... NameEntryN;
+NameEntryU NameEntryV U's_Score V's_Score
+NameEntryW NameEntryX W's_Score X's_Score
+                    .
+                    .
+                    .
+

@@ -1,0 +1,19 @@
+
+    if ( detect("west",OBJECT.WALL) ) {
+        move("west");
+        draw("west");
+    }
+    
+
+    if ( detect("south",OBJECT.NOTHING) ) {
+        move("south");
+    }
+    else {
+
+        if ( detect("east",OBJECT.NOTHING) ) {
+            move("east");
+        }
+        else {
+            move("north");
+        }
+    }

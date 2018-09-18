@@ -1,0 +1,10 @@
+move("south");
+move("east");
+if(detect(
+          DIR.EAST,OBJECT.WALL))
+          {
+           draw();
+}
+else{
+     move("east");
+    };

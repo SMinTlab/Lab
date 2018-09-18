@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<!--
+======================================================================
+Project Name    : HTML5Application
+File Name       : index.html
+Encoding        : UTF-8
+Creation Date   : 2017/04/07
+
+Copyright © 2017 Mitani. All rights reserved.
+
+This source code or any portion thereof must not be
+reproduced or used in any manner whatsoever.
+======================================================================
+-->
+<!--
+chrome open option> --allow-file-access-from-files
+selectable languages> 
+Windows file system root>C:\Users\%%USERNAME%%\AppData\Local\Google\Chrome\User Data\Default\File System
+Mac OS file system root>/Users/%%USERNAME%%/Library/Application Support/Google/Chrome/Default/File System/
+-->
+<html>
+    <head>
+        <title>Webコンパイラーwith棒人形</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet">
+        <link href="css/human_anim.css" rel="stylesheet" type="text/css" />
+        <link rel="shortcut icon" href="favicon.ico"/>
+    </head>
+    <body>
+        <div id="description" style="position:relative;left:0px;top:0px">
+            Humanクラスのインスタンスは暫定的にmove("up"),move("down"),move("right"),move("left")で動きます。
+        </div>
+        <div class="btn-group">
+            <div class="btn-group">
+                <button class="btn btn-default dropdown-toggle" data-toggle="dropdown"><i class="glyphicon glyphicon-search"></i> <span class="caret"></span></button>
+                <ul class="dropdown-menu" id="font-size">
+                    <li><a href="#" data-size="10">小さい</a></li>
+                    <li><a href="#" data-size="12">普通</a></li>
+                    <li><a href="#" data-size="14">大きい</a></li>
+                </ul>
+            </div>
+            <div class="btn-group">
+                <button class="btn btn-default dropdown-toggle" data-toggle="dropdown"><i class="glyphicon glyphicon-font"></i> <span class="caret"></span></button>
+                <ul class="dropdown-menu" id="language">
+                    <li><a href="#" data-type="java">Java</a></li>
+                    <li><a href="#" data-type="c">C/C++</a></li>
+                </ul>
+            </div>
+            <button id="save" class="btn btn-default"><i class="glyphicon glyphicon-floppy-save"></i></button>
+            <button id="load" class="btn btn-default"><i class="glyphicon glyphicon-folder-open"></i></button>
+            <button id="execute" class="btn btn-default"><i class="glyphicon glyphicon-play"></i></button>
+            <button id="submit" class="btn btn-default"><i class="glyphicon glyphicon-play-circle"></i></button>
+            <a id="download" target="_blank" hidden=""><button id="export" class="btn btn-default"><i class="glyphicon glyphicon-export"></i></button> </a> 
+        </div>
+        
+        <div id="editor" style="height: 600px;width: 600px"></div>
+        <div id="Output" style="position:absolute;left:0px;top:650px">出力</div>
+
+        <div id="humantab">
+            
+        </div>
+        
+        
+        <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.2.0/ace.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.2.0/ext-language_tools.js"></script>
+        <!--<script src="movingtestscript.js"></script>-->
+        <script src="./js/moveHuman.js"></script>
+        <script src="createHuman.js"></script>
+        <script src="./js/operationAdapter.js"></script>
+        <script src="editor.js"></script>
+        
+
+        
+
+</html>

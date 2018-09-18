@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<!--
+======================================================================
+Project Name    : StickParson
+File Name       : tutorial.html
+Encoding        : UTF-8
+Creation Date   : 2017/12/01
+
+Copyright © 2017 Mitani. All rights reserved.
+
+This source code or any portion thereof must not be
+reproduced or used in any manner whatsoever.
+======================================================================
+-->
+<html>
+    <head>
+        <title>チュートリアル</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="css/tutorial.css" rel="stylesheet">
+        <link rel="shortcut icon" href="favicon.ico"/>
+        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet">
+        <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.2.0/ace.js"></script>
+    </head>
+    <body>
+        <div id="Rule">
+            <h1 style="color: blue">ゲームのルール</h1>
+            <h4 style="color: skyblue">1.自分が操作するキャラクターはマップ左上から始まる青い棒人間.</h4>
+            <img src="img/rule1.png" alt="">
+            <h4 style="color: skyblue">2.move()関数で歩いたり,draw()関数で前のマスを塗ったりすることで囲んだマスは得点になる.</h4>
+            <img src="img/rule2.png" alt="">
+            <h4 style="color: skyblue">3.一度得点化されたり,塗られたマスは囲っても得点にならず,他の色で塗りなおすこともできない.</h4>
+            <h4 style="color: skyblue">4.1000ターン経過したらゲーム終了.ランキングが更新される.</h4>
+            <h3 style="color: red">※注意！　コードの実行前には必ず,名前がデフォルト(A)から変更されているかを確認して下さい！<br></h3>
+            <img src="img/caution1.png" alt="">
+        </div>
+        <br>
+        <div id="scenario">
+            <h1 style="color: blue">システムの利用方法</h1>
+            <h3 style="color: skyblue">1.まずは動かしてみよう</h3>
+            <h4>あらかじめ記述されたコードを実行して,プレイヤーのキャラクターがどのように動くかを確認しよう.</h4>
+            <div id="carousel1" class="carousel slide" data-ride="carousel" style="width: 50%">
+                <!-- インジケーターの設置。下部の○●ボタン。 -->
+                <ol class="carousel-indicators">
+                    <li data-target="#carousel1" data-slide-to="0" class="active"></li>
+                    <li data-target="#carousel1" data-slide-to="1"></li>
+                    <li data-target="#carousel1" data-slide-to="2"></li>
+                </ol>
+
+                <!-- スライドの内容 -->
+                <div class="carousel-inner">
+                    <div class="item active">
+                        <img src="img/slide1_01.png" alt="">
+                        <div class="carousel-caption">
+                            <h4 style="color: green">エディタ右側のツールバーから実行ボタンをクリック</h4>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <img src="img/slide1_02.png" alt="">
+                        <div class="carousel-caption">
+                            <h4 style="color: green">実行後は自動的にゲームが開始される</h4>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <img src="img/slide1_03.png" alt="">
+                        <div class="carousel-caption">
+                            <h4 style="color: green">1000ターン経過するまで相手のコードと争う</h4>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 左右の移動ボタン -->
+                <a class="left carousel-control" href="#carousel1" data-slide="prev">
+                    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                </a>
+                <a class="right carousel-control" href="#carousel1" data-slide="next">
+                    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                </a>
+            </div>
+            <h3 style="color: skyblue">2.コードを編集しよう</h3>
+            <h4>このページの下にあるAPIリファレンスを参考にしながら自分でコードを変えてみる.</h4>
+            <div id="carousel2" class="carousel slide" data-ride="carousel" style="width: 50%">
+                <!-- インジケーターの設置。下部の○●ボタン。 -->
+                <ol class="carousel-indicators">
+                    <li data-target="#carousel2" data-slide-to="0" class="active"></li>
+                    <li data-target="#carousel2" data-slide-to="1"></li>
+                    <li data-target="#carousel2" data-slide-to="2"></li>
+                </ol>
+
+                <!-- スライドの内容 -->
+                <div class="carousel-inner">
+                    <div class="item active">
+                        <img src="img/slide2_01.png" alt="">
+                        <div class="carousel-caption">
+                            <h4 style="color: green">APIリファレンスで色々実行してみる.</h4>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <img src="img/slide2_02.png" alt="">
+                        <div class="carousel-caption">
+                            <h4 style="color: green">コードを少しずつ改良していく.</h4>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <img src="img/slide2_03.png" alt="">
+                        <div class="carousel-caption">
+                            <h4 style="color: green">コードをブラウザに保存することもできる.</h4>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 左右の移動ボタン -->
+                <a class="left carousel-control" href="#carousel2" data-slide="prev">
+                    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                </a>
+                <a class="right carousel-control" href="#carousel2" data-slide="next">
+                    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                </a>
+            </div>
+            <h3 style="color: skyblue">3.再び実行してみる</h3>
+            <h4>コードの実行と編集は,スコアを向上させるために繰り返し行うといいだろう.</h4>
+            <div id="carousel3" class="carousel slide" data-ride="carousel" style="width: 50%">
+                <!-- インジケーターの設置。下部の○●ボタン。 -->
+                <ol class="carousel-indicators">
+                    <li data-target="#carousel3" data-slide-to="0" class="active"></li>
+                    <li data-target="#carousel3" data-slide-to="1"></li>
+                </ol>
+
+                <!-- スライドの内容 -->
+                <div class="carousel-inner">
+                    <div class="item active">
+                        <img src="img/slide3_01.png" alt="">
+                        <div class="carousel-caption">
+                            <h4 style="color: green">マップはマップ画面をクリックすると再生成される.</h4>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <img src="img/slide3_02.png" alt="">
+                        <div class="carousel-caption">
+                            <h4 style="color: green">ランキングにいる相手とも戦ってみよう.</h4>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 左右の移動ボタン -->
+                <a class="left carousel-control" href="#carousel3" data-slide="prev">
+                    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                </a>
+                <a class="right carousel-control" href="#carousel3" data-slide="next">
+                    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                </a>
+            </div>
+        </div>
+        <div id="apis">
+            <h1 style="color: blue">APIリファレンス</h1>
+            <h3>各APIの動作には最長で2秒ほどかかる場合があります.</h3>
+            <form id="move_api">
+                <p>void move(</p>
+                <select name="arg1">
+                    <optgroup label="String direction">
+                        <option value="west">"west"</option>
+                        <option value="north">"north"</option>
+                        <option value="east">"east"</option>
+                        <option value="south">"south"</option>
+                    </optgroup>
+                    <optgroup label="DIR DIRECTION">
+                        <option value="west">DIR.WEST</option>
+                        <option value="north">DIR.NORTH</option>
+                        <option value="east">DIR.EAST</option>
+                        <option value="south">DIR.SOUTH</option>
+                    </optgroup>
+                </select>
+                <p>)<br>引数には"north","west", "south", "east"が指定可能. <br>指定した方角にプレイヤーは一歩進む.</p>
+                <div><button type="button">実行する</button></div>
+                <div class="return">返り値<input type="text" value="none" readonly="readonly"/></div>
+            </form>
+            <br>
+            <form id="detect_api">
+                <p>bool detect(</p>
+                <select name="arg1">
+                    <optgroup label="String direction">
+                        <option value="west">"west"</option>
+                        <option value="north">"north"</option>
+                        <option value="east">"east"</option>
+                        <option value="south">"south"</option>
+                    </optgroup>
+                    <optgroup label="DIR DIRECTION">
+                        <option value="west">DIR.WEST</option>
+                        <option value="north">DIR.NORTH</option>
+                        <option value="east">DIR.EAST</option>
+                        <option value="south">DIR.SOUTH</option>
+                    </optgroup>
+                </select>
+                <p>,</p>
+                <select name="arg2">
+                    <optgroup label="Object TARGET">
+                        <option value="WALL">OBJECT.WALL</option>
+                        <option value="NOTHING">OBJECT.NOTHING</option>
+                    </optgroup>
+                </select>
+                <p>)<br>引数1にはDIR.SOUTH, DIR.NORTH, DIR.WEST, DIR.EASTが指定可能. <br>引数2にはOBJECT.WALL, OBJECT.NOTHINGが指定可能.<br>引数1に指定した方向に引数2で指定した要素が存在しているかどうかを真偽値で返す.</p>
+                <div><button type="button">実行する</button></div>
+                <div class="return">返り値<input type="text" value="none" readonly="readonly"/></div>
+            </form>
+            <br>
+            <form id="draw_api">
+                <p>void draw(</p>
+                <p>)<br>プレイヤーが向いている方向にあるひとマスを塗る.</p>
+                <div><button type="button">実行する</button></div>
+                <div class="return">返り値<input type="text" value="none" readonly="readonly"/></div>
+            </form>
+            <br>
+            <form id="get_Position_api">
+                <p>int[] get_Position(</p>
+                <p>)<br>プレイヤーがいる位置を返す.</p>
+                <div><button type="button">実行する</button></div>
+                <div class="return">返り値<input type="text" value="none" readonly="readonly"/></div>
+            </form>
+            <br>
+            <form id="get_X_api">
+                <p>int get_X(</p>
+                <p>)<br>プレイヤーがいる位置のX座標を返す.</p>
+                <div><button type="button">実行する</button></div>
+                <div class="return">返り値<input type="text" value="none" readonly="readonly"/></div>
+            </form>
+            <br>
+            <form id="get_Y_api">
+                <p>int get_Y(</p>
+                <p>)<br>プレイヤーがいる位置のY座標を返す.</p>
+                <div><button type="button">実行する</button></div>
+                <div class="return">返り値<input type="text" value="none" readonly="readonly"/></div>
+            </form>
+            <br>
+            <form id="get_Direction_api">
+                <p>DIR get_Direction(</p>
+                <p>)<br>プレイヤーの向いている方向を返す.</p>
+                <div><button type="button">実行する</button></div>
+                <div class="return">返り値<input type="text" value="none" readonly="readonly"/></div>
+            </form>
+            <br>
+            <form id="MapElem_api">
+                <p>String MapElem(</p>
+                <select name="arg1">
+                    <optgroup label="int[] position">
+                        <option value="00">{0,0}</option>
+                        <option value="01">{0,1}</option>
+                        <option value="02">{0,2}</option>
+                        <option value="10">{1,0}</option>
+                        <option value="11">{1,1}</option>
+                        <option value="12">{1,2}</option>
+                        <option value="20">{2,0}</option>
+                        <option value="21">{2,1}</option>
+                        <option value="22">{2,2}</option>
+                    </optgroup>
+                </select>
+                <p>)<br>引数はint型の配列[x座標,y座標]が指定可能. <br>その位置のラベルを返す.例えば"0"で何もない床,"1"で壁.</p>
+                <div><button type="button">実行する</button></div>
+                <div class="return">返り値<input type="text" value="none" readonly="readonly"/></div>
+            </form>
+            <br>
+            <form id="FORWARD_api">
+                <p>DIR FORWARD(</p>
+                <p>)<br>プレイヤーに対する前の方角を返す.</p>
+                <div><button type="button">実行する</button></div>
+                <div class="return">返り値<input type="text" value="none" readonly="readonly"/></div>
+            </form>
+            <br>
+            <form id="BACKWARD_api">
+                <p>DIR BACKWARD(</p>
+                <p>)<br>プレイヤーに対する後の方角を返す.</p>
+                <div><button type="button">実行する</button></div>
+                <div class="return">返り値<input type="text" value="none" readonly="readonly"/></div>
+            </form>
+            <br>
+            <form id="RIGHT_api">
+                <p>DIR RIGHT(</p>
+                <p>)<br>プレイヤーに対する右の方角を返す.</p>
+                <div><button type="button">実行する</button></div>
+                <div class="return">返り値<input type="text" value="none" readonly="readonly"/></div>
+            </form>
+            <br>
+            <form id="LEFT_api">
+                <p>DIR LEFT(</p>
+                <p>)<br>プレイヤーに対する左の方角を返す.</p>
+                <div><button type="button">実行する</button></div>
+                <div class="return">返り値<input type="text" value="none" readonly="readonly"/></div>
+            </form>
+        </div>
+        <div id="map"></div>
+        <div id="scores">
+            <div id="Tutorial">
+                <input type="text" value="0" hidden=""/>
+            </div>
+        </div>
+        <script src="js/rot.js"></script>
+        <script src="./js/rottest.js"></script>
+        <script src="./js/moveHuman.js"></script>
+        <script src="./js/drawHuman.js"></script>
+        <script src="./js/operationAdapter.js"></script>
+        <script src="./js/TurnController.js"></script>
+        <script src="./js/Rules.js"></script>
+        
+        <script src="js/tutorial.js"></script>
+    </body>
+</html>

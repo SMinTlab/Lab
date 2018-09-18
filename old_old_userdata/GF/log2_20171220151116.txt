@@ -1,0 +1,35 @@
+    
+    move("west");
+    draw();
+    move("south");
+    
+    int loopflag, RCount,LCount;
+    loopflag = 1;
+    RCount = 0;
+    LCount = 0;
+    
+    while (loopflag > 0) {
+        while (detect(FORWARD(),OBJECT.NOTHING)) {
+            move(FORWARD());
+        }
+        
+        draw();
+        if (detect(LEFT(),OBJECT.NOTHING) && RCount > 0) {
+            move(LEFT());
+            Rcount = 0;
+        }
+        else if (detect(RIGHT(),OBJECT.NOTHING) && LCount > 0) {
+            move(RIGHT());
+            LCount = 0;
+        }
+        else if (detect(RIGHT(),OBJECT.NOTHING) && RCount == 0) {
+            move(RIGHT());
+        }
+        else if (detect(LEFT(),OBJECT.NOTHING) && LCount == 0) {
+            move(LEFT());
+        }
+        else {
+            move(BACKWARD());
+        }
+    }
+    
