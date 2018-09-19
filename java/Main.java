@@ -358,13 +358,16 @@ public class Main {// merge output
 				String s;
 
 				s = a_out.take();
-				System.out.println(s);
-				a_in.put("");
-
-				s = b_out.take();
-				System.out.println(s);
-				b_in.put("");
-
+                                System.out.println(s);
+                                a_in.put(""); 
+                                while(s.contains("log")){
+                                    s = a_out.take();
+                                    System.out.println(s);
+                                    a_in.put(""); 
+				}
+                                s = b_out.take();
+                                System.out.println(s);
+                                b_in.put("");
 			}
 		} catch (InterruptedException e) {
 			// TODO Auto-generated catch block

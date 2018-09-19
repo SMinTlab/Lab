@@ -287,6 +287,15 @@ reproduced or used in any manner whatsoever.
                 <div><button type="button">実行する</button></div>
                 <div class="return">返り値<input type="text" value="none" readonly="readonly"/></div>
             </form>
+            <br>
+            <form id="log_api" class="form-horizontal">
+                <p>String log(</p>
+                <input type="text" id="logText"/>
+                <p>)<br>標準出力に引数に指定された文字列を出力する.</p>
+                <div><button type="button">実行する</button></div>
+                <div class="return">返り値<textarea id="log_return" readonly="readonly"></textarea></div>
+            </form>
+
         </div>
         <div id="map"></div>
         <div id="scores">
@@ -298,10 +307,11 @@ reproduced or used in any manner whatsoever.
         <script src="./js/rottest.js"></script>
         <script src="./js/moveHuman.js"></script>
         <script src="./js/drawHuman.js"></script>
+        <script src="./js/logHuman.js"></script>
         <script src="./js/operationAdapter.js"></script>
         <script src="./js/TurnController.js"></script>
         <script src="./js/Rules.js"></script>
-        
+
         <script src="js/tutorial.js"></script>
     </body>
 </html>

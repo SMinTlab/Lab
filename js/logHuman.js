@@ -28,8 +28,13 @@ function logHuman(name, args) {
     console.log(name+" >> "+args);
     let txtarea = $("#outlog textarea");
     let badge = $("#outLog span");
+    if(actor === tutorial){
+        txtarea = $("#log_return");
+    }else{
+        badge.text(Number(badge.text())+1);
+    }
     txtarea.text(txtarea.text()===""?args:txtarea.text()+"\n"+args);
-    badge.text(Number(badge.text())+1);
+    
     $defer.resolve();
 
     if (false) {

@@ -178,6 +178,12 @@ $(`button`).on(`click`, function () {
                 $(`#` + op + `_api .return`).children(`input`).val(r);
             });
             break;
+        case "log":
+            code = t_instxt + op + `("${$(this).parent(`*`).parent(`*`).children(`input`).val()}");`;
+            t_actionbuffer(code).then(function (r) {
+                $(`#` + op + `_api .return`).children(`input`).val(r);
+            });
+            break;
         default :
             code = "none";
             break;
@@ -194,6 +200,9 @@ let tutorial = {
     buf:[],
     draw_x: 2,
     draw_y: 2,
+    logHuman: function(args){
+        return logHuman(tutorial.name, args);
+    },
     moveHuman: function(args){
         return moveHuman(tutorial.name, args).then(function(){
             tutorial.draw_x = tutorial.x;tutorial.draw_y = tutorial.y;
