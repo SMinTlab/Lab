@@ -5,8 +5,8 @@ header('Access-Control-Allow-Origin: *');
 ini_set( 'display_errors', 0);
 umask(0);
 if ($_SERVER['REQUEST_METHOD'] == "POST") {
-  $fileNum = $_POST['option'];
-  $Name = $_POST['name'];
+  $fileNum = isset($_POST['option'])?$_POST['option']:null;
+  $Name = isset($_POST['name'])?$_POST['name']:null;
   $fileName = "../userdata/$Name/log$Name"."_$fileNum"."_".date("YmdHis").".txt";
   $data = $_POST['request'];
   $logins = "../userdata/$Name";

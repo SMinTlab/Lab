@@ -1,14 +1,14 @@
 <?php
 umask(0);
 //if (isset($_SERVER['HTTP_X_REQUESTED_WITH']) && strtolower($_SERVER['HTTP_X_REQUESTED_WITH']) == 'xmlhttprequest') {
-    ini_set( 'display_errors', 0);
+    //ini_set( 'display_errors', 0);
     header('Content-type:application/json; charset=utf8;');
     header('Access-Control-Allow-Origin: *');
     $globalRanks = "../userdata/ranks.txt";
     if ($_SERVER['REQUEST_METHOD'] == "GET") {
-        $Rank = $_GET["rank"];
-        $Name = $_GET["name"];
-        $wantCode = $_GET["wantcode"];
+        $Rank = isset($_GET["rank"])?$_GET["rank"]:null;
+        $Name = isset($_GET["name"])?$_GET["name"]:null;
+        $wantCode = isset($_GET["wantcode"])?$_GET["wantcode"]:null;
         $privateRanks = "../userdata/$Name/ranks_$Name.txt";
         $logins = "../userdata/$Name";
         if(!file_exists($logins)){
@@ -18,7 +18,7 @@ umask(0);
           touch($privateRanks);
           chmod($privateRanks, 0777);
           if($fp = fopen($privateRanks, 'a+')){
-            while (($row = fgetcsv($fp, 10000, ",")) !== FALSE) {
+            while (($row = fgetcsv($fp, 1024, ",")) !== FALSE) {
               $data[] = array( 'namel'=>$row[0] ,'scorel'=>$row[1], 's_date'=>$row[2]);
             }
             fclose($fp);
@@ -49,7 +49,7 @@ umask(0);
           touch($globalRanks);
           chmod($globalRanks, 0777);
           if($fp = fopen($globalRanks, 'a+')){
-            while (($row = fgetcsv($fp, 10000, ",")) !== FALSE) {
+            while (($row = fgetcsv($fp, 1024, ",")) !== FALSE) {
               $data[] = array( 'namel'=>$row[0] ,'scorel'=>$row[1], 's_date'=>$row[2]);
             }
             fclose($fp);

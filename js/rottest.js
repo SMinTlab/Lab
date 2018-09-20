@@ -109,18 +109,18 @@ function init_globvars() {
     env[$("#Player2").text()] = {};
     /***********************************プレイヤー初期化*******************************************/
     //Player[$("#Player1").text()] = {x: 2, y: 2, d: "SOUTH", b: []};
-    actor1.x=2;
-    actor1.y=2;
-    actor1.d="SOUTH";
-    actor1.buf=[];
+    actor1.x = 2;
+    actor1.y = 2;
+    actor1.d = "SOUTH";
+    actor1.buf = [];
     area[2][2] = 1;
     Draw(0, 0, ["Z"], "GLOBAL");
     Draw(2, 2, ["T1", "1@s1", "_"], $("#Player1").text());
     //Player[$("#Player2").text()] = {x: w - 1, y: w - 1, d: "SOUTH", b: []};
-    actor2.x=w-1;
-    actor2.y=h-1;
-    actor2.d="SOUTH";
-    actor2.buf=[];
+    actor2.x = w - 1;
+    actor2.y = h - 1;
+    actor2.d = "SOUTH";
+    actor2.buf = [];
     area[w - 1][w - 1] = 2;
     Draw(w - 1, w - 1, ["T2", "2@s1", "_"], $("#Player2").text());
     //Redraw(display);
@@ -225,12 +225,15 @@ function operation_function(data) {
                         alert("Standard Error: " + data.stderr);
                     }
                     if (data.status === "completed") {
-                        if(!data.build_stderr || !data.stderr){
+                        if (!data.build_stderr || !data.stderr) {
                             modalClose();
                             setProgress(0);
                         }
+                        var counter = function (str, seq) {
+                            return str.split(seq).length - 1;
+                        }
                         //let tmp = OperationAdapter(data.stdout);
-                        if(!data.stdout){
+                        if (!data.stdout || counter(data.stdout,/\w+\.moveHuman\(\w+\)[\r\n]/) + counter(data.stdout,/\w+\.drawHuman\(\)[\r\n]/) === 0) {
                             alert("必ず一度は行動する(move()あるいはdraw()をする)コードを記述してください.");
                             modalClose();
                             setProgress(0);
@@ -427,7 +430,7 @@ function Move(dir, at, wall, envname) {
                 an = 2;
                 break;
             case tutorial.name :
-                an=1;
+                an = 1;
                 break;
             default :
                 break;
@@ -702,7 +705,7 @@ function code_logger(code, name) {
         url: logphpurl,
         data: data
     }).success(function (data, dataType) {
-        if(data[0]!=="200"){
+        if (data[0] !== "200") {
             alert("Error : " + XMLHttpRequest.status + "(" + textStatus + ")," + errorThrown);
             alert("実行したコードが保存できませんでした.");
         }
@@ -730,30 +733,28 @@ function challenge(rank) {
         url: rankphpurl,
         data: data
     }).success(function (data, dataType) {
-        if(data[0]==="200"){
+        if (data[0] === "200") {
             console.log(data);
             console.log(editor2.getValue());
             editor2.setValue(data[3]);
-            if($("#Player1").text() === data[2]){
-                $("#Player2").text(data[2]+"old");
-                actor2.name = data[2]+"old";
-                $("#" + data[2]).id = data[2]+"old";
-            }
-            else{
+            if ($("#Player1").text() === data[2]) {
+                $("#Player2").text(data[2] + "old");
+                actor2.name = data[2] + "old";
+                $("#" + data[2]).id = data[2] + "old";
+            } else {
                 $("#Player2").text(data[2]);
                 actor2.name = data[2];
                 $("#" + data[2]).id = data[2];
             }
-            
+
             init_globvars();
             $(`#mappan`).click();
             alert("相手を変更しました.");
-        }
-        else{
+        } else {
             alert("Error : " + XMLHttpRequest.status + "(" + textStatus + ")," + errorThrown);
             alert("相手を変更できませんでした.");
         }
-        
+
     }).error(function (XMLHttpRequest, textStatus, errorThrown) {
         if (XMLHttpRequest.status !== 0) {
             alert("Error : " + XMLHttpRequest.status + "(" + textStatus + ")," + errorThrown);
@@ -774,17 +775,16 @@ function gameover() {
     new_ranking(name1, score1, editor1.getValue()).then(function () {
         setProgress(60);
         new_ranking(name2, score2, editor2.getValue()).then(function () {
-            if(name2!=="OPP"){
+            if (name2 !== "OPP") {
                 setProgress(80);
-                if(score1>score2){
-                    chalog(name1, name2, score1, score2).then(function(){
+                if (score1 > score2) {
+                    chalog(name1, name2, score1, score2).then(function () {
                         setProgress(100);
                         modalClose();
                         setProgress(0);
                     });
-                }
-                else{
-                    chalog(name2, name1, score2, score1).then(function(){
+                } else {
+                    chalog(name2, name1, score2, score1).then(function () {
                         setProgress(100);
                         modalClose();
                         setProgress(0);

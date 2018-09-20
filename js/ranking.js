@@ -12,13 +12,14 @@
  * ======================================================================
  */
 
-let debug = true;
+let debug = false;
 let port = true;
+let lab = 80, home = 8080, pos;
 if (debug) {
-    rankphpurl = `http://localhost${port ? ":8080" : ""}/mitani/php/rank.php`;
-    logphpurl = `http://localhost${port ? ":8080" : ""}/mitani/php/log.php`;
-    chalogphpurl = `http://localhost${port ? ":8080" : ""}/mitani/php/chalog.php`;
-    finalizeurl = `http://localhost${port ? ":8080" : ""}/mitani/php/finalize.php`;
+    rankphpurl = `http://localhost${port ? ":"+pos : ""}/mitani/php/rank.php`;
+    logphpurl = `http://localhost${port ? ":"+pos : ""}/mitani/php/log.php`;
+    chalogphpurl = `http://localhost${port ? ":"+pos : ""}/mitani/php/chalog.php`;
+    finalizeurl = `http://localhost${port ? ":"+pos : ""}/mitani/php/finalize.php`;
 } else {
     rankphpurl = `php/rank.php`;
     logphpurl = `php/log.php`;

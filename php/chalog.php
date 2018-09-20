@@ -1,19 +1,19 @@
 <?php
 umask(0);
 //if (isset($_SERVER['HTTP_X_REQUESTED_WITH']) && strtolower($_SERVER['HTTP_X_REQUESTED_WITH']) == 'xmlhttprequest') {
-    ini_set( 'display_errors', 0);
+    //ini_set( 'display_errors', 0);
     header('Content-type:application/json; charset=utf8;');
     header('Access-Control-Allow-Origin: *');
     if ($_SERVER['REQUEST_METHOD'] == "GET") {
-        $Num = $_GET["num"];
-        $Winner = $_GET["winner"];
+        $Num = isset($_GET["num"])?$_GET["num"]:null;
+        $Winner = isset($_GET["winner"])?$_GET["winner"]:null;
         $chalog = "../userdata/chalog.txt";
         if(!file_exists($chalog)){
           echo json_encode(explode(":","404:$chalog not found."));
         }
         if(isset($Num)){
           if($fp = fopen($chalog, 'a+')){
-            while (($row = fgetcsv($fp, 1000, ",")) !== FALSE) {
+            while (($row = fgetcsv($fp, 1024, ",")) !== FALSE) {
               $data[] = array( 'winl'=>$row[0] ,'loosel'=>$row[1], 'winscl'=>$row[2], 'loosescl'=>$row[3], 's_date'=>$row[4]);
             }
             fclose($fp);
