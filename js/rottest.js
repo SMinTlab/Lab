@@ -233,7 +233,7 @@ function operation_function(data) {
                             return str.split(seq).length - 1;
                         }
                         //let tmp = OperationAdapter(data.stdout);
-                        if (!data.stdout || counter(data.stdout,/\w+\.moveHuman\(\w+\)[\r\n]/) + counter(data.stdout,/\w+\.drawHuman\(\)[\r\n]/) === 0) {
+                        if (!data.stdout || counter(data.stdout, /\w+\.moveHuman\(\w+\)[\r\n]/) + counter(data.stdout, /\w+\.drawHuman\(\)[\r\n]/) === 0) {
                             alert("必ず一度は行動する(move()あるいはdraw()をする)コードを記述してください.");
                             modalClose();
                             setProgress(0);
@@ -763,39 +763,44 @@ function challenge(rank) {
     });
 }
 
-function gameover() {
+function gameover(listener) {
+    console.log(listener);
     pause = true;
-    modalOpen();
-    let name1 = $("#Player1").text();
-    let name2 = $("#Player2").text();
-    let score1 = $(`#${name1}`).children(`input`).val();
-    let score2 = $(`#${name2}`).children(`input`).val();
-    setProgress(20);
-    console.log(score1 + "," + score2);
-    new_ranking(name1, score1, editor1.getValue()).then(function () {
-        setProgress(60);
-        new_ranking(name2, score2, editor2.getValue()).then(function () {
-            if (name2 !== "OPP") {
-                setProgress(80);
-                if (score1 > score2) {
-                    chalog(name1, name2, score1, score2).then(function () {
-                        setProgress(100);
-                        modalClose();
-                        setProgress(0);
-                    });
-                } else {
-                    chalog(name2, name1, score2, score1).then(function () {
-                        setProgress(100);
-                        modalClose();
-                        setProgress(0);
-                    });
+    if (listener !== null) {
+        listener();
+    } else {
+        modalOpen();
+        let name1 = $("#Player1").text();
+        let name2 = $("#Player2").text();
+        let score1 = $(`#${name1}`).children(`input`).val();
+        let score2 = $(`#${name2}`).children(`input`).val();
+        setProgress(20);
+        console.log(score1 + "," + score2);
+        new_ranking(name1, score1, editor1.getValue()).then(function () {
+            setProgress(60);
+            new_ranking(name2, score2, editor2.getValue()).then(function () {
+                if (name2 !== "OPP") {
+                    setProgress(80);
+                    if (score1 > score2) {
+                        chalog(name1, name2, score1, score2).then(function () {
+                            setProgress(100);
+                            modalClose();
+                            setProgress(0);
+                        });
+                    } else {
+                        chalog(name2, name1, score2, score1).then(function () {
+                            setProgress(100);
+                            modalClose();
+                            setProgress(0);
+                        });
+                    }
                 }
-            }
-            setProgress(100);
-            modalClose();
-            setProgress(0);
+                setProgress(100);
+                modalClose();
+                setProgress(0);
+            });
         });
-    });
+    }
 }
 
 function modalOpen(speed) {

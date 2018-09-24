@@ -27,6 +27,7 @@ let actionstack = [];
 let mod = 0;//編集回数
 let isMoving = false;
 let pause = false;
+let gameOverListener = null;
 let data = {};
 let map = new ROT.Map.DividedMaze(w, h);
 let tileSet = document.createElement("img");
@@ -154,7 +155,7 @@ let actor1 = {
             actor1.buf.shift();
             if (turn > 999) {
                 scheduler.remove(actor1);
-                gameover();
+                gameover(gameOverListener);
             }
             //Lighting();
         };
@@ -237,7 +238,7 @@ let actor2 = {
             //Lighting();
             if (turn > 999) {
                 scheduler.remove(actor2);
-                gameover();
+                gameover(gameOverListener);
             }
         };
         if (pause === false) {
@@ -411,7 +412,7 @@ $(document).on(`click`,'#envout',function () {
     console.log(env);
 });
 $(document).on(`click`,'#gameover',function () {
-    gameover();
+    gameover(null);
 });
 $(document).on(`click`,`#rankreload`,function () {
     ref();
@@ -420,6 +421,15 @@ $(document).on(`click`,`#rankreload`,function () {
 $(document).on(`click`,"#ranking",function () {
     let name = $("#Player1").text();
     new_ranking(name, $(`#${name}`).children(`input`).val(), editor1.getValue());
+});
+$(document).on(`click`,"#demo",function(){
+    console.log("demo start");
+    gameOverListener = function(){
+        console.log("loop");
+        $("#demo").click();
+    };
+    $(`#mappan`).click();
+    $('#execute').click();
 });
 /*再描画*/
 $(`#mappan`).click(function (e) {
