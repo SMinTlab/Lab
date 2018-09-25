@@ -267,8 +267,8 @@ function ref() {
             url: rankphpurl,
             data: data
         }).success(function (data, dataType) {
+            console.log(data);
             if (data[0] === "200") {
-                console.log(data);
                 let txt = `
             <tr>
                     <td id="rank${i}_rank" class="rank_${data[2]}">${i + 1}</td>
