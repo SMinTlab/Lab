@@ -1,8 +1,0 @@
-move("south");
-move("south");
-move("east");
-move("east");
-move("north");
-move("north");
-move("west");
-move("west");

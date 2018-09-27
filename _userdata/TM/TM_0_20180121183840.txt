@@ -1,6 +1,0 @@
-if(!detect(LEFT(),OBJECT.WALL)){
-    move(LEFT());
-}
-while(!detect(FORWARD(),OBJECT.WALL)){
-    move(FORWARD());
-}
